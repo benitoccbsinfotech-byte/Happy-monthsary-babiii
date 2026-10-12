@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-handwriting {
+    font-family: 'Caveat', cursive, sans-serif;
+  }
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #F4A2B0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E86A82;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(105vh) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-15vh) scale(1.1) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.floating-heart-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 20;
+  animation: float-heart linear infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Polaroid tape & shadow styling */
+.polaroid-card {
+  box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.08), 0 8px 10px -6px rgba(225, 29, 72, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 30px -10px rgba(225, 29, 72, 0.15), 0 10px 15px -5px rgba(225, 29, 72, 0.08);
+}
